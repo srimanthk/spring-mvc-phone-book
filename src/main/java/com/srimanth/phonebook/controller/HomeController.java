@@ -51,15 +51,7 @@ public class HomeController {
     public ModelAndView addContact() {
         LOGGER.debug("Entered in HomeController.addContact");
         ModelAndView modelAndView = new ModelAndView("input");
-        PhoneBook newContact = new PhoneBook();
-        Entry home = new Entry();
-        home.setName("Home");
-        home.setPhoneBook(newContact);
-        newContact.getEntries().add(home);
-        Entry work = new Entry();
-        work.setName("Work");
-        work.setPhoneBook(newContact);
-        newContact.getEntries().add(work);
+        PhoneBook newContact = populatePhoneBook();
         modelAndView.addObject("phoneBook", newContact);
         LOGGER.debug("Exit from HomeController.addContact");
         return modelAndView;
@@ -98,6 +90,19 @@ public class HomeController {
         p1.getEntries().add(work);
 
         phoneBookRepository.save(p1);
+    }
+
+    private PhoneBook populatePhoneBook() {
+        PhoneBook newContact = new PhoneBook();
+        Entry home = new Entry();
+        home.setName("Home");
+        home.setPhoneBook(newContact);
+        newContact.getEntries().add(home);
+        Entry work = new Entry();
+        work.setName("Work");
+        work.setPhoneBook(newContact);
+        newContact.getEntries().add(work);
+        return newContact;
     }
 
 }
