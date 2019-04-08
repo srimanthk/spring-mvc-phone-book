@@ -81,7 +81,9 @@ public class HomeControllerTest {
     @Test
     public void searchContact() throws Exception {
         ModelAndView phoneBookHome = controllerUT.phoneBookHome();
-        ModelAndView modelAndView = controllerUT.searchContact((PhoneBook) phoneBookHome.getModel().get(RETURN_KEY));
+        PhoneBook phoneBook = (PhoneBook) phoneBookHome.getModel().get(RETURN_KEY);
+        phoneBook.setName("Test");
+        ModelAndView modelAndView = controllerUT.searchContact(phoneBook);
         assertEquals(TARGET,modelAndView.getViewName());
         assertTrue(modelAndView.getModel().containsKey("entries"));
     }
