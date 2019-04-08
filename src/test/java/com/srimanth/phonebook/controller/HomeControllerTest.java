@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RegistrationControllerTest {
+public class HomeControllerTest {
 
     private final String TARGET = "home";
     final String RETURN_KEY = "phoneBook";
