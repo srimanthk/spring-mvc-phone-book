@@ -16,21 +16,21 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">Contact details</div>
                         <div class="panel-body">
-                            <div class="form-group row" >
-                              <div class="col-xs-4">
-                                <label for="ex3">Name</label>
-                                <form:input path="name" cssClass="form-control" />
-                              </div>
+                            <div class="form-group row">
+                                <div class="col-xs-4">
+                                    <label for="ex3">Name</label>
+                                    <form:input path="name" cssClass="form-control" />
+                                </div>
                             </div>
 
                             <div class="form-group">
-                              <form:input path="entries[0].name" cssClass="col-xs-2" readonly="true"/>
-                              <form:input type="number" path="entries[0].phoneNumber" cssClass="col-xs-4" />
+                                <form:input path="entries[0].name" cssClass="col-xs-2" readonly="true" />
+                                <form:input type="number" path="entries[0].phoneNumber" name="homeNumber" cssClass="col-xs-4" />
                             </div>
 
                             <div class="form-group">
-                                <form:input path="entries[1].name" cssClass="col-xs-2" readonly="true"/>
-                                <form:input type="number" path="entries[1].phoneNumber" cssClass="col-xs-4" />
+                                <form:input path="entries[1].name" cssClass="col-xs-2" readonly="true" />
+                                <form:input type="number" path="entries[1].phoneNumber" name="workNumber" cssClass="col-xs-4" />
                             </div>
 
                         </div>
@@ -45,13 +45,37 @@
             </div>
             <script>
                 function saveContact() {
-                    document.forms[0].action = '<c:url value="/saveContact/"/>';
-                    document.forms[0].submit();
+                    var contactName = document.getElementById("name").value;
+                    var homeNumber = document.getElementById("entries0.phoneNumber").value;
+                    var workNumber = document.getElementById("entries1.phoneNumber").value;
+                    if (validName(contactName) && validPhoneNumber(homeNumber, "home") && validPhoneNumber(workNumber, "work")) {
+                        document.forms[0].action = '<c:url value="/saveContact/"/>';
+                        document.forms[0].submit();
+                    }
                 }
 
                 function navigateToHome() {
                     document.forms[0].action = '<c:url value="/home/"/>';
                     document.forms[0].submit();
+                }
+
+                function validName(name) {
+                    if (!name) {
+                        alert("Name cannot be empty");
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+
+                function validPhoneNumber(data, type) {
+                    var phoneNo = /^\d{11}$/;
+                    if (data && data.match(phoneNo)) {
+                        return true;
+                    } else {
+                        alert("Not a valid " + type + " Phone Number");
+                        return false;
+                    }
                 }
             </script>
         </body>
