@@ -22,3 +22,7 @@ Add New Contact
 Search Contact
 ![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/Search.JPG)
 
+Connect to H2 Database
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/H2_DB.JPG)
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/H2_DB_DATA.JPG)
+
