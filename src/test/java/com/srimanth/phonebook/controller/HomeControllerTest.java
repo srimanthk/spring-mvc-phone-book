@@ -23,8 +23,8 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class HomeControllerTest {
 
-    private final String TARGET = "home";
-    final String RETURN_KEY = "phoneBook";
+    private static final String TARGET = "home";
+    private static final String RETURN_KEY = "phoneBook";
 
     // Create an instance of what you are going to test.
     // When using the @InjectMocks annotation, you must create the instance in

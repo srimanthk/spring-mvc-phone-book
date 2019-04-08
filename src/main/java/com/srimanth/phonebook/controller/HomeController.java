@@ -78,12 +78,12 @@ public class HomeController {
 
         Entry home = new Entry();
         home.setName("Home");
-        home.setPhoneNumber(new Long("27813173711"));
+        home.setPhoneNumber(Long.valueOf("27813173711"));
         home.setPhoneBook(p1);
 
         Entry work = new Entry();
         work.setName("Work");
-        work.setPhoneNumber(new Long("27744501576"));
+        work.setPhoneNumber(Long.valueOf("27744501576"));
         work.setPhoneBook(p1);
 
         p1.getEntries().add(home);
