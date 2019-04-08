@@ -12,7 +12,7 @@ import java.util.List;
 public interface EntryRepository extends JpaRepository<Entry, Integer> {
 
     @Query(nativeQuery = true, value = "select e.* from entry e join phone_book pb on (e.phone_book_id = pb.id) " +
-            "where pb.name like %?1%")
+            "where lower(pb.name) like %?1%")
     List<Entry> findByName(String name);
 
 }

@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface PhoneBookRepository extends JpaRepository<PhoneBook, Integer> {
 
-    @Query(nativeQuery = true, value = "select pb.* from phone_book pb where pb.name like %?1%")
+    @Query(nativeQuery = true, value = "select pb.* from phone_book pb where lower(pb.name) like %?1%")
     List<PhoneBook> findByName(String name);
 
 }

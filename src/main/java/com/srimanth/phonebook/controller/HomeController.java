@@ -40,7 +40,7 @@ public class HomeController {
     public ModelAndView searchContact(PhoneBook phoneBook) {
         LOGGER.debug("Entered in HomeController.searchPhoneBook");
         ModelAndView modelAndView = new ModelAndView("home");
-        List<Entry> entries = entryRepository.findByName(phoneBook.getName());
+        List<Entry> entries = entryRepository.findByName(phoneBook.getName().toLowerCase());
         modelAndView.addObject("entries", entries);
         modelAndView.addObject("phoneBooks", phoneBookRepository.findAll());
         LOGGER.debug("Exit from HomeController.searchPhoneBook");
@@ -74,16 +74,16 @@ public class HomeController {
     @PostConstruct
     public void init() {
         PhoneBook p1 = new PhoneBook();
-        p1.setName("srimanth");
+        p1.setName("Srimanth");
 
         Entry home = new Entry();
         home.setName("Home");
-        home.setPhoneNumber(Long.valueOf("27813173711"));
+        home.setPhoneNumber(Long.valueOf("27813112345"));
         home.setPhoneBook(p1);
 
         Entry work = new Entry();
         work.setName("Work");
-        work.setPhoneNumber(Long.valueOf("27744501576"));
+        work.setPhoneNumber(Long.valueOf("27744512345"));
         work.setPhoneBook(p1);
 
         p1.getEntries().add(home);
