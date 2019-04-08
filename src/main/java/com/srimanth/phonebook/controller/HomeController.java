@@ -60,9 +60,9 @@ public class HomeController {
     @RequestMapping(value = "/saveContact", method = RequestMethod.POST)
     public ModelAndView saveContact(PhoneBook phoneBook) {
         LOGGER.debug("Entered in HomeController.addContact");
-        phoneBook.getEntries().forEach(entry -> {
-            entry.setPhoneBook(phoneBook);
-        });
+        //Remove when no Phone number added
+        phoneBook.getEntries().removeIf(entry -> null == entry.getPhoneNumber());
+        phoneBook.getEntries().forEach(entry -> entry.setPhoneBook(phoneBook));
         phoneBookRepository.saveAndFlush(phoneBook);
         ModelAndView modelAndView = new ModelAndView("home");
         modelAndView.addObject("phoneBook", new PhoneBook());

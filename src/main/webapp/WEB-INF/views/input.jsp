@@ -16,17 +16,21 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">Contact details</div>
                         <div class="panel-body">
-                            <div class="form-group">
-                                name
+                            <div class="form-group row" >
+                              <div class="col-xs-4">
+                                <label for="ex3">Name</label>
                                 <form:input path="name" cssClass="form-control" />
+                              </div>
                             </div>
+
                             <div class="form-group">
-                                <form:input path="entries[0].name" cssClass="form-control" />
-                                <form:input type="number" path="entries[0].phoneNumber" cssClass="form-control" />
+                              <form:input path="entries[0].name" cssClass="col-xs-2" readonly="true"/>
+                              <form:input type="number" path="entries[0].phoneNumber" cssClass="col-xs-4" />
                             </div>
+
                             <div class="form-group">
-                                <form:input path="entries[1].name" cssClass="form-control" />
-                                <form:input type="number" path="entries[1].phoneNumber" cssClass="form-control" />
+                                <form:input path="entries[1].name" cssClass="col-xs-2" readonly="true"/>
+                                <form:input type="number" path="entries[1].phoneNumber" cssClass="col-xs-4" />
                             </div>
 
                         </div>
