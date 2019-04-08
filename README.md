@@ -14,15 +14,15 @@ Clone/Checkout the project
 http://localhost:8080/
 
 Home page
-![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/Home.JPG)
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/screenshots/Home.JPG)
 
 Add New Contact
-![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/Add_New.JPG)
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/screenshots/Add_New.JPG)
 
 Search Contact
-![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/Search.JPG)
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/screenshots/Search.JPG)
 
 Connect to H2 Database
-![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/H2_DB.JPG)
-![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/H2_DB_DATA.JPG)
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/screenshots/H2_DB.JPG)
+![alt text](https://github.com/srimanthk/spring-mvc-phone-book/blob/master/screenshots/H2_DB_DATA.JPG)
 
