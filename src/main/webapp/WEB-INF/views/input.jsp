@@ -25,12 +25,12 @@
 
                             <div class="form-group">
                                 <form:input path="entries[0].name" cssClass="col-xs-2" readonly="true" />
-                                <form:input type="number" path="entries[0].phoneNumber" name="homeNumber" cssClass="col-xs-4" />
+                                <form:input type="number" path="entries[0].phoneNumber" cssClass="col-xs-4" />
                             </div>
 
                             <div class="form-group">
                                 <form:input path="entries[1].name" cssClass="col-xs-2" readonly="true" />
-                                <form:input type="number" path="entries[1].phoneNumber" name="workNumber" cssClass="col-xs-4" />
+                                <form:input type="number" path="entries[1].phoneNumber" cssClass="col-xs-4" />
                             </div>
 
                         </div>
@@ -48,7 +48,7 @@
                     var contactName = document.getElementById("name").value;
                     var homeNumber = document.getElementById("entries0.phoneNumber").value;
                     var workNumber = document.getElementById("entries1.phoneNumber").value;
-                    if (validName(contactName) && validPhoneNumber(homeNumber, "home") && validPhoneNumber(workNumber, "work")) {
+                    if (validName(contactName) && validPhoneNumber(homeNumber, "home") && validPhoneNumber(workNumber, "work") && checkBothEqual(homeNumber, workNumber)) {
                         document.forms[0].action = '<c:url value="/saveContact/"/>';
                         document.forms[0].submit();
                     }
@@ -62,6 +62,15 @@
                 function validName(name) {
                     if (!name) {
                         alert("Name cannot be empty");
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+
+                function checkBothEqual(homeNumber, workNumber) {
+                    if (homeNumber === workNumber) {
+                        alert("Home and work numbers cannot be same");
                         return false;
                     } else {
                         return true;
